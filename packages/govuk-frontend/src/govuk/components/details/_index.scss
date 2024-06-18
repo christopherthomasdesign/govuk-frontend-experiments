@@ -4,7 +4,9 @@
     @include govuk-text-colour;
     @include govuk-responsive-margin(6, "bottom");
 
-    display: block;
+    // Prevent bottom margins on summary and details from collapsing in Firefox
+    // and Safari, matching Chrome's behaviour (https://crbug.com/40815464)
+    display: flow-root;
   }
 
   .govuk-details__summary {
