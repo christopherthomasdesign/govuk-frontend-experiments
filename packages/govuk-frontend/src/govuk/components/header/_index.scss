@@ -1,10 +1,9 @@
 @include govuk-exports("govuk/component/header") {
-  $govuk-header-background: govuk-colour("black");
+  $govuk-header-background: govuk-colour("blue");
   $govuk-header-border-color: $govuk-brand-colour;
   $govuk-header-border-width: govuk-spacing(2);
   $govuk-header-text: govuk-colour("white");
   $govuk-header-link-active: #1d8feb;
-  $govuk-header-nav-item-border-color: #2e3133;
   $govuk-header-link-underline-thickness: 3px;
   $govuk-header-vertical-spacing-value: 2;
   // This crown height is only used to calculate top offset of mobile menu button
@@ -16,7 +15,7 @@
   .govuk-header {
     @include govuk-font($size: 16, $line-height: 1);
 
-    border-bottom: govuk-spacing(2) solid $govuk-header-border-color;
+    // border-bottom: govuk-spacing(2) solid $govuk-header-border-color;
     color: $govuk-header-text;
     background: $govuk-header-background;
   }
@@ -32,17 +31,18 @@
   .govuk-header__container {
     @include govuk-clearfix;
     position: relative;
-    padding-top: govuk-spacing($govuk-header-vertical-spacing-value);
+    padding-top: 10px;
+    padding-bottom: 15px;
   }
 
   .govuk-header__logotype {
     display: inline-block;
     position: relative;
-    top: -3px;
 
     // Add a gap after the logo in case it's followed by a product name. This
     // gets removed later if the logotype is a :last-child.
     margin-right: govuk-spacing(1);
+    margin-left: -3px;
     fill: currentcolor;
     vertical-align: top;
 
@@ -119,7 +119,8 @@
     // in Firefox
     display: inline-block;
     margin-right: govuk-spacing(2);
-    font-size: 30px; // We don't have a mixin that produces 30px font size
+    font-size: 60px; // We don't have a mixin that produces 30px font size
+    line-height: 60px;
 
     @include govuk-media-query($from: desktop) {
       display: inline;
@@ -163,7 +164,7 @@
   }
 
   .govuk-header__logo {
-    @include govuk-responsive-margin($govuk-header-vertical-spacing-value, "bottom");
+    // @include govuk-responsive-margin($govuk-header-vertical-spacing-value, "bottom");
     // Protect the absolute positioned menu button from overlapping with the
     // logo with right padding using the button's width
     padding-right: $govuk-header-menu-button-width;
@@ -267,15 +268,18 @@
 
   .govuk-header__navigation--end {
     @include govuk-media-query($from: tablet) {
+      position: absolute;
+      right: 0;
+      bottom: 5px;
       margin: 0;
-      padding: govuk-spacing(1) 0;
+      padding: 0;
       text-align: right;
     }
   }
 
   .govuk-header__navigation-item {
     padding: govuk-spacing(2) 0;
-    border-bottom: 1px solid $govuk-header-nav-item-border-color;
+    border-bottom: 1px solid #2e3133;
 
     @include govuk-media-query($from: tablet) {
       display: inline-block;
@@ -452,13 +456,13 @@
       width: 100%;
 
       &:not(:last-child) {
-        border-bottom: 1px solid $govuk-header-nav-item-border-color;
+        border-bottom: 1px solid #2e3133;
       }
     }
 
     @include govuk-media-query($from: tablet) {
       padding: govuk-spacing(2) 0 govuk-spacing(2) govuk-spacing(4);
-      border-left: 1px solid $govuk-header-nav-item-border-color;
+      border-left: 1px solid #2e3133;
       align-self: stretch;
 
       &:not(:last-child) {
