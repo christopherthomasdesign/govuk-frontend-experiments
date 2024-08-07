@@ -30,7 +30,7 @@ $govuk-text-colour: govuk-colour("black") !default;
 /// @type Colour
 /// @access public
 
-$govuk-canvas-background-colour: govuk-colour("light-grey") !default;
+$govuk-canvas-background-colour: #f2f8fd;
 
 /// Body background colour
 ///
@@ -102,7 +102,7 @@ $govuk-success-colour: govuk-colour("green") !default;
 /// @type Colour
 /// @access public
 
-$govuk-border-colour: govuk-colour("mid-grey") !default;
+$govuk-border-colour: #c3ddf4;
 
 /// Input border colour
 ///
