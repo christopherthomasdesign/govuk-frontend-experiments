@@ -354,6 +354,13 @@
       }
     }
 
+    // Hide the user icon on narrow screens, as it already appears in the toggle menu
+    @include govuk-media-query($until: tablet) {
+      .govuk-header__one-login-icon {
+        display: none;
+      }
+    }
+
     @include govuk-media-query($from: tablet) {
       display: flex;
       justify-content: center;
@@ -390,15 +397,15 @@
     display: inline-flex;
     align-items: center;
     position: absolute;
-    top: (((govuk-spacing($govuk-header-vertical-spacing-value) * 2) + $govuk-header-crown-height) / 2) -
-      ($govuk-header-menu-button-height / 2);
     right: 0;
+    bottom: 8px;
     min-height: $govuk-header-menu-button-height;
     margin: 0;
     padding: 0;
     border: 0;
     color: govuk-colour("white");
     background: none;
+    font-weight: bold;
     word-break: break-all;
     cursor: pointer;
 
@@ -427,6 +434,18 @@
     // Ensure the button stays hidden if the hidden attribute is present
     &[hidden] {
       display: none;
+    }
+
+    @include govuk-media-query($until: mobile) {
+      display: block;
+      position: relative;
+      margin-top: 20px;
+      margin-bottom: 0;
+
+      .govuk-header__one-login-icon {
+        margin-left: 5px;
+        vertical-align: text-bottom;
+      }
     }
   }
 
