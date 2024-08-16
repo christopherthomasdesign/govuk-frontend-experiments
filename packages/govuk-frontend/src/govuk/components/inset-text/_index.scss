@@ -11,6 +11,7 @@
     clear: both;
 
     border-left: $govuk-border-width-wide solid $govuk-border-colour;
+    background-color: $govuk-canvas-background-colour;
 
     > :first-child {
       margin-top: 0;

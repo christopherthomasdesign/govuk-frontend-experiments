@@ -51,6 +51,20 @@ $govuk-gutter: 60px !default;
 
 $govuk-gutter-half: $govuk-gutter / 2;
 
+/// Width of a third of the gutter between grid columns
+///
+/// @type Number
+/// @access public
+
+$govuk-gutter-third: $govuk-gutter / 3;
+
+/// Width of a quarter of the gutter between grid columns
+///
+/// @type Number
+/// @access public
+
+$govuk-gutter-quarter: $govuk-gutter / 4;
+
 // =========================================================
 // Borders
 // =========================================================

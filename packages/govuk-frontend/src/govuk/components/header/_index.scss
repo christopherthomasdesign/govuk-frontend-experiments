@@ -439,8 +439,8 @@
     @include govuk-media-query($until: mobile) {
       display: block;
       position: relative;
-      margin-top: 20px;
-      margin-bottom: 0;
+      margin-top: 25px;
+      margin-bottom: -10px;
 
       .govuk-header__one-login-icon {
         margin-left: 5px;
